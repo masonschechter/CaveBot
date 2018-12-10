@@ -23,7 +23,7 @@ async def hello(ctx):
 
 @bot.command()
 async def Buloz(ctx):
-	await ctx.send('Buloz is a cuck')
+	await ctx.send('Buloz is a gentleman and a scholar')
 
 
 @bot.command()
