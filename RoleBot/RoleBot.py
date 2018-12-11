@@ -27,9 +27,8 @@ async def Buloz(ctx):
 
 
 @bot.command()
-async def mock(ctx, *mocked):
-	name = " ".join(mocked)
-	message = await ctx.channel.history().get(author__name=name)
+async def mock(ctx, mocked: discord.Member): ## will accept name, nickname, mention, userID, and name#discrim
+	message = await ctx.channel.history().get(author__name=mocked.name)
 	mocking = list(message.content)
 	mockery = []
 	for i in range(0, len(mocking)):
@@ -37,7 +36,7 @@ async def mock(ctx, *mocked):
 			mockery.append(str.upper(mocking[i]))
 		else:
 			mockery.append(str.lower(mocking[i]))
-	await ctx.send("'" + ''.join(mockery) + "' " + "-- " + message.author.mention)
+	await ctx.send(f"'{''.join(mockery)}' -- {message.author.mention}'") ## 'WhAt ThEy SaId' -- @Author
 
 
 

@@ -5,7 +5,7 @@ class Card:
   def __init__(self, value, suit):
     self.value = value
     self.suit = suit
-    self.name = "{} of {}".format(value, suit)
+    self.name = f"{value} of {suit}"
 
 class Deck(Card):
 
@@ -72,12 +72,12 @@ class Game():
       player.aces_in_hand = 0
       card = self.deck.draw_card()
       player.hand.append(card)
-      print("{} has a face-up {}".format(player.name, card.name))
+      print(f"{player.name} has a face-up {card.name}")
       if card.value == 'A':
         player.aces_in_hand += 1
       card = self.deck.draw_card()
       player.hand.append(card)
-      print("{} has a face-up {}".format(player.name, card.name))
+      print(f"{player.name} has a face-up {card.name}")
       if card.value == 'A':
         player.aces_in_hand += 1
 
@@ -86,16 +86,16 @@ class Game():
     if not player.name == 'dealer':
       player.calc_hand_value()
       if player.hand_value == 21:
-        print("{} got a BLACKJACK!".format(player.name))
+        print(f"{player.name} got a BLACKJACK!")
         self.turn_counter += 1
         self.player_turn()
       elif player.hand_value < 21:
-        print("{}, your hand total is {}".format(player.name, player.hand_value))
+        print(f"{player.name}, your hand total is {player.hand_value}")
         choice = input("Would you like to hit or stay?: ")
         if choice.lower() == "hit":
           card = self.deck.draw_card()
           player.hand.append(card)
-          print("{} drew the {}".format(player.name, card.name))
+          print(f"{player.name} drew the {card.name}")
           if card.value == 'A':
             player.aces_in_hand += 1
           self.player_turn()
@@ -103,27 +103,27 @@ class Game():
           self.turn_counter += 1
           self.player_turn()
       elif player.hand_value > 21:
-        print("Cya {}, you busted".format(player.name))
+        print(f"Cya {player.name}, you busted")
         self.turn_counter += 1
         self.player_turn()
     else:
       player.calc_hand_value()
       if player.hand_value < 17:
-        print("The dealer's hand total is {}. The dealer hits.".format(player.hand_value))
+        print(f"The dealer's hand total is {player.hand_value}. The dealer hits.")
         card = self.deck.draw_card()
         player.hand.append(card)
-        print("The dealer drew the {}".format(card.name))
+        print(f"The dealer drew the {card.name}")
         if card.value == 'A':
           player.aces_in_hand += 1
         self.player_turn()
       elif player.hand_value <= 21:
         self.dealer_score = player.hand_value
-        print("The dealer's hand total is {}. The dealer stays.".format(player.hand_value))
+        print(f"The dealer's hand total is {player.hand_value}. The dealer stays.")
         self.turn_counter = 0
       else:
         self.dealer_score = player.hand_value
-        print("The dealer busts with a hand total of {}".format(player.hand_value))
-        self.turn_counter = 0   
+        print(f"The dealer busts with a hand total of {player.hand_value}")
+        self.turn_counter = 0
 
   def end_round(self):
     i = 0
@@ -135,36 +135,36 @@ class Game():
       if player.hand_value < 21:
         if self.dealer_score < 21:
           if player.hand_value > self.dealer_score:
-            print("Atta boy {}, you beat the dealer".format(player.name))
+            print(f"Atta boy {player.name}, you beat the dealer")
             self.turn_counter += 1
             self.end_round()
           elif player.hand_value == self.dealer_score:
-            print("Oof {}, you tied with the dealer, sorry bud.".format(player.name))
+            print(f"Oof {player.name}, you tied with the dealer, sorry bud.")
             self.turn_counter += 1
             self.end_round()
           else:
-            print("Get rekt {}, you got cucked by the dealer".format(player.name))
+            print(f"Get rekt {player.name}, you got cucked by the dealer")
             self.turn_counter += 1
             self.end_round()
         elif self.dealer_score == 21:
-          print("gg {}, the dealer hit a blackjack".format(player.name))
+          print(f"gg {player.name}, the dealer hit a blackjack")
           self.turn_counter += 1
           self.end_round()
         else:
-          print("Good news {}, the dealer busted, you won!".format(player.name))
+          print(f"Good news {player.name}, the dealer busted, you won!")
           self.turn_counter += 1
           self.end_round()
       elif player.hand_value == 21:
-        print("Nice blackjack {}, too bad it's worth 3/5ths of a whitejack".format(player.name))
+        print(f"{player.name} hit BLACKJACK")
         self.turn_counter += 1
         self.end_round()
       elif player.hand_value > 21:
         if self.dealer_score > 21:
-          print("Whelp {}, you busted but so did the dealer. Winner winner.".format(player.name))
+          print(f"Whelp {player.name}, you busted but so did the dealer. Winner winner.")
           self.turn_counter += 1
           self.end_round()
         else:
-          print("R.I.P {}, you lose".format(player.name))
+          print(f"R.I.P {player.name}, you lose")
           self.turn_counter += 1
           self.end_round()
     round_in_progress = False
@@ -185,7 +185,7 @@ def main():
     if new_game.lower() in ('y', 'yes'):
       game_in_progress = True
       for num in range(1, int(input("How many players are there?: "))+1):
-        name = input("Enter name for Player {}: ".format(str(num)))
+        name = input(f"Enter name for Player {str(num)}: ")
         player_list.append(Player(name))
       player_list.append(Dealer('dealer'))
       deck = Deck()
