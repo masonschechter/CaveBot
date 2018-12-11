@@ -4,8 +4,8 @@
 Current command prefix: $
 
 RoleBot was designed to bring order to a community Discord server that I established. It's main functionality is to enable members of the server to
-self-assign and self-remove roles. The roles correspond to common games played and are represented by their respective game icons. If someone were 
-looking for a partner in Fortnite, for example, they could "@Fortnite" and only Fortnite players would be pinged.
+self-assign and self-remove roles by reacting to a specific message with emojis. The roles correspond to common games played and are represented by emojis of their 
+respective game icons. If someone were looking for a partner in Fortnite, for example, they could "@Fortnite" and only Fortnite players would be pinged.
 
 RoleBot also includes some silly functions:
 
