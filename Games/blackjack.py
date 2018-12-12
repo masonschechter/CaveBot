@@ -143,7 +143,7 @@ class Game():
             self.turn_counter += 1
             self.end_round()
           else:
-            print(f"Get rekt {player.name}, you got cucked by the dealer")
+            print(f"Get rekt {player.name}, you got beat by the dealer")
             self.turn_counter += 1
             self.end_round()
         elif self.dealer_score == 21:
