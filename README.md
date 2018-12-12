@@ -12,7 +12,7 @@ RoleBot also includes some silly functions:
 $mock "username":
 	Finds the last thing said by "username" and returns it with AlTeRnAtInG cApiTaLiZaTiOn
 
-$eightball "yes_or_no_question":
+$8ball "yes_or_no_question":
 	Returns custom eightball responses to yes or no questions
 
 

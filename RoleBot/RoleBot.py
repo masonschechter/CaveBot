@@ -40,7 +40,7 @@ async def mock(ctx, mocked: discord.Member): ## will accept name, nickname, ment
 
 
 
-@bot.command()
+@bot.command(name='8ball')
 async def eightball(ctx, *, yes_or_no_question):
 	responses = ['It is decidedly so', 'Without a doubt',
 				        'Yes, definitely', 'You may rely on it', 'As I see it, yes', 'Signs point to yes',
