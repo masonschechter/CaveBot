@@ -1,0 +1,4 @@
+*.txt
+const.py
+__pycache__/
+*.pyc
