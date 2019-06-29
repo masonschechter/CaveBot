@@ -104,18 +104,11 @@ async def on_raw_reaction_remove(payload):
 async def on_command_error(ctx,error):
 	print(error)
 	if isinstance(error, commands.CommandNotFound):
-		await ctx.send(f"Sorry, my owner didn't teach me that trick :(")
+		await ctx.send(f"Uh oh! My owner didn't teach me that trick :(\nMake sure you're typing the command correctly and try again.")
+	elif isinstance(error, commands.MissingRole):
+		await ctx.send(f"Sorry bud, you don't have the permissions/role to use this command.")
 	else:
 		await ctx.send(f"Beep Boop! I'm a broken bot :)")
-
-
-
-
-
-
-
-
-
 
 
 
