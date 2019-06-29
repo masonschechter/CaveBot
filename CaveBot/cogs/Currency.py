@@ -64,7 +64,7 @@ class Currency(commands.Cog):
 			await ctx.send(f"Yerrr poor, {ctx.author.mention}.\nYou can't gamble {bet}. You only have {balance} nugs")
 	
 	@commands.command()
-	@commands.has_role('Bot Buster')
+	@commands.has_role('Enforcers')
 	async def give(self, ctx, amount: int, user: discord.Member = None):
 
 		if not user:

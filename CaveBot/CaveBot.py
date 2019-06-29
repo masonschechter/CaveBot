@@ -17,6 +17,14 @@ emoji_role = {
 		'League':'League of Legends', 'Overwatch':'Overwatch', 'Dota':'Dota', 'Apex':'Apex', 
 		'Mordhau':'Mordhau', 'Underlords':'Underlords','Starcraft2':'Starcraft2'}
 
+bot.load_extension('cogs.Currency')
+
+def is_owner(ctx):
+	return ctx.author.id == OwnerID
+
+def is_botTest(ctx):
+	return ctx.channel.id == 390306184751480835
+
 @bot.event
 async def on_ready():
 	print("====================")
