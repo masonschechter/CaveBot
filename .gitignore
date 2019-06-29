@@ -1,3 +1,4 @@
 *.pyc
 const.py
 *.db
+__pycache__/
