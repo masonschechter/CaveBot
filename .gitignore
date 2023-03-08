@@ -1,4 +1,4 @@
-*.pyc
+*.txt
 const.py
-*.db
 __pycache__/
+*.pyc
