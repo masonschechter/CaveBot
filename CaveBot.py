@@ -47,7 +47,6 @@ async def Buloz(ctx):
 async def mock(ctx, mocked: discord.Member): ## will accept name, nickname, mention, userID, and name#discrim
 	messages = ctx.channel.history(limit=100)
 	message_ID = 0
-
 	async for m in messages:
 		if not message_ID:
 			if not m.author.name == mocked.name:
