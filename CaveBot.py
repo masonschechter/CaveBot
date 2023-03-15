@@ -9,7 +9,8 @@ from numpy.random import choice as nprc
 OwnerID = const.OWNER_ID
 BotID = const.BOT_ID
 Token = const.TOKEN
-bot = commands.Bot(command_prefix=const.COMMAND_PREFIX)
+intents = discord.Intents.all()
+bot = commands.Bot(intents=intents, command_prefix=const.COMMAND_PREFIX)
 
 emoji_role = {
 		'Fortnite':'Fortnite', 'CSGO':'CSGO', 'WoW':'WoW', 'PUBG':'PUBG',
@@ -17,7 +18,7 @@ emoji_role = {
 		'League':'League of Legends', 'Overwatch':'Overwatch', 'Dota':'Dota', 'Apex':'Apex', 
 		'Mordhau':'Mordhau', 'Underlords':'Underlords','Starcraft2':'Starcraft2'}
 
-bot.load_extension('cogs.Currency')
+# bot.load_extension('cogs.Currency')
 
 def is_owner(ctx):
 	return ctx.author.id == OwnerID
@@ -109,4 +110,4 @@ async def on_command_error(ctx,error):
 		await ctx.send(f"Sorry bud, you don't have the permissions/role to use this command.")
 	else:
 		await ctx.send(f"Beep Boop! I'm a broken bot :)")
-bot.run(Token, bot=True)
+bot.run(Token)
