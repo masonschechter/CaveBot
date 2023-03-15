@@ -16,7 +16,10 @@ emoji_role = {
 		'Fortnite':'Fortnite', 'CSGO':'CSGO', 'WoW':'WoW', 'PUBG':'PUBG',
 		'OSRS':'OSRS', 'Hots':'Heroes of the Storm', 'Hearthstone':'Hearthstone',
 		'League':'League of Legends', 'Overwatch':'Overwatch', 'Dota':'Dota', 'Apex':'Apex', 
-		'Mordhau':'Mordhau', 'Underlords':'Underlords','Starcraft2':'Starcraft2'}
+		'Mordhau':'Mordhau', 'Underlords':'Underlords','Starcraft2':'Starcraft2', 
+		'Minecraft':'Minecraft', 'Valorant':'Valorant', 'Spellbreak':'Spellbreak', 
+		'DayZ':'DayZ', 'AmongUs':'Among Us', 'SSBM':'SSBM', 'Tarkov':'Tarkov', 
+		'Battlefront2':'Battlefront 2', 'DeepRockGalactic':'Deep Rock Galactic'}
 
 # bot.load_extension('cogs.Currency')
 
