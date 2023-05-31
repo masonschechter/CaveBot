@@ -5,6 +5,7 @@ from discord.ext import commands
 import const
 import sqlite3
 from numpy.random import choice as nprc
+from cogs.Currency import Currency
 
 OwnerID = const.OWNER_ID
 BotID = const.BOT_ID
@@ -36,6 +37,8 @@ async def on_ready():
     print(bot.user.name)
     print(bot.user.id)
     print("====================")
+
+    await bot.add_cog(Currency(bot))
     
 @bot.command()
 async def hello(ctx):
@@ -123,4 +126,5 @@ async def on_command_error(ctx,error):
         await ctx.send(f"Sorry bud, you don't have the permissions/role to use this command.")
     else:
         await ctx.send(f"Beep Boop! I'm a broken bot :)")
+
 bot.run(Token)
